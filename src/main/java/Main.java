@@ -1,10 +1,8 @@
 public class Main {
     public static void main(String[] args) {
-
-        // leggo il file e torno una lista di oggetti che contengono le info di ogni riga
-        Reader.creaLista();
-        // scrive il file formattato da inserire su intellij
-        Writer.writeList();
+        // creaLista ritorna una lista con oggetti che contengono le info del file excel
+        // writeList scrive la req e la repr su file
+        Writer.writeList(Reader.creaLista());
 
     }
 
