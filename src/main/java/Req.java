@@ -10,7 +10,8 @@ public class Req {
     String tipo;
     String esempio;
     String descrizione;
-    Boolean obbligatori;
+    Boolean obbligatori = false;
+    String enumeration;
 
     public void add(int index, String value){
         switch (index){
@@ -33,6 +34,8 @@ public class Req {
                 if(value!=null)
                     this.obbligatori = true;
                 break;
+            case 6:
+                this.enumeration = value;
         }
     }
 }

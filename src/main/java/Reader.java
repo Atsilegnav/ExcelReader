@@ -8,7 +8,7 @@ import java.util.ArrayList;
 
 public class Reader {
 
-    static ArrayList<Req> creaLista() {
+    static void creaStampaLista() {
         String filePath = "C:\\Users\\g.morin\\Developer\\Allitude\\ReprPartyReference.xlsx";
         File file = new File(filePath);
         FileInputStream inputStream;
@@ -18,6 +18,10 @@ public class Reader {
             // Creiamo un'istanza della classe Workbook per gestire il file Excel
             Workbook workbook = WorkbookFactory.create(inputStream);
             // salto la prima riga
+
+
+            //workbook.getNumberOfSheets();
+
 
             Sheet sheet = workbook.getSheetAt(0);
             for (Row row : sheet) {
@@ -39,7 +43,7 @@ public class Reader {
         } catch (IOException e) {
             throw new RuntimeException(e);
         }
-        return list;
+        Writer.writeList(list);
     }
 
 }
